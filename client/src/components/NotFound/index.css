@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ── 404 page ── */
+.notfound-page {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.76)),
+        url('../../assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 24px 90px;
+}
+
+.notfound-card {
+    width: 100%;
+    max-width: 620px;
+    text-align: center;
+    background: rgba(18, 16, 14, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 52px 40px 44px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+}
+
+/* Plate graphic */
+.notfound-plate {
+    position: relative;
+    width: 232px;
+    height: 232px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 34% 28%, #26211c 0%, #15120f 62%, #0d0b09 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 0 0 12px rgba(255, 255, 255, 0.03),
+        inset 0 0 46px rgba(0, 0, 0, 0.65), 0 22px 46px rgba(0, 0, 0, 0.55);
+    animation: plateFloat 6s ease-in-out infinite;
+}
+
+.notfound-plate::after {
+    content: '';
+    position: absolute;
+    inset: 26px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    pointer-events: none;
+}
+
+.plate-rim {
+    position: absolute;
+    inset: 14px;
+    border-radius: 50%;
+    border: 1px dashed rgba(212, 175, 55, 0.5);
+    animation: plateSpin 30s linear infinite;
+}
+
+.plate-center {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.plate-utensils {
+    color: #d4af37;
+    font-size: 22px;
+    opacity: 0.9;
+}
+
+.notfound-code {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.6rem;
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes plateFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes plateSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.notfound-title {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.notfound-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.97rem;
+    line-height: 1.7;
+    margin: 16px auto 0;
+    max-width: 440px;
+}
+
+.notfound-path {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 0.9em;
+    color: #f4d03f;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    padding: 2px 8px;
+    word-break: break-all;
+}
+
+.notfound-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.notfound-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 13px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.notfound-btn.primary {
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    color: #1a1200;
+    border: none;
+}
+
+.notfound-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(212, 175, 55, 0.35);
+}
+
+.notfound-btn.ghost {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.notfound-btn.ghost:hover {
+    border-color: #d4af37;
+    color: #f4d03f;
+    transform: translateY(-2px);
+}
+
+.notfound-btn:focus-visible {
+    outline: 2px solid #d4af37;
+    outline-offset: 3px;
+}
+
+.notfound-links {
+    margin-top: 38px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.notfound-links-label {
+    color: #d4af37;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+}
+
+.notfound-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.notfound-links a {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.82);
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.86rem;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.notfound-links a:hover {
+    border-color: rgba(212, 175, 55, 0.6);
+    color: #f4d03f;
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.notfound-links a:focus-visible {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+    .notfound-page {
+        padding-top: 120px;
+    }
+
+    .notfound-card {
+        padding: 36px 24px 32px;
+    }
+
+    .notfound-plate {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 24px;
+    }
+
+    .notfound-plate::after {
+        inset: 20px;
+    }
+
+    .plate-rim {
+        inset: 11px;
+    }
+
+    .plate-utensils {
+        font-size: 18px;
+    }
+
+    .notfound-code {
+        font-size: 3.4rem;
+    }
+
+    .notfound-title {
+        font-size: 1.5rem;
+    }
+
+    .notfound-actions {
+        flex-direction: column;
+    }
+
+    .notfound-btn {
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .notfound-plate,
+    .plate-rim,
+    .notfound-btn,
+    .notfound-btn.primary,
+    .notfound-btn.ghost {
+        animation: none;
+        transition: none;
+        transform: none;
+    }
+}

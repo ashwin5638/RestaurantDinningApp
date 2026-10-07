@@ -1,0 +1,262 @@
+@keyframes scrolled {
+    from {
+        background: transparent;
+        padding: 20px 0;
+    }
+
+    to {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 12px 0;
+    }
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 0;
+
+    animation: scrolled linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 50px;
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.logo-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #f42626;
+    border-radius: 50%;
+    margin-top: 8px;
+}
+
+.login-cont {
+    justify-content: space-between;
+}
+
+.login {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin-left: 10px;
+    text-transform: uppercase;
+    color: red;
+}
+
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: none;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    color: #f61313 !important;
+}
+
+/* CTA Section */
+.cta-container {
+    display: none;
+    /* Hidden on mobile by default */
+    align-items: center;
+    gap: 24px;
+}
+
+.book-btn {
+    background-color: #e73535;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #e21818;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.3s ease;
+    z-index: 1100;
+}
+
+/* Mobile Menu */
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.mobile-menu-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    /* Full width on very small screens, max-width on larger */
+    max-width: 320px;
+    background: white;
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu-sidebar.open {
+    transform: translateX(0);
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 80px 24px 40px;
+    overflow-y: auto;
+}
+
+.mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobile-nav-link {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: block;
+}
+
+.mobile-nav-link:hover {
+    background-color: #fff0f0;
+    color: #ff6b6b;
+    padding-left: 20px;
+}
+
+.mobile-nav-link.auth {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.mobile-cta {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 1024px) {
+    .desktop-nav {
+        display: flex;
+    }
+
+    .cta-container {
+        display: flex;
+    }
+
+    .hamburger-btn {
+        display: none;
+    }
+
+    /* Ensure mobile menu doesn't show up weirdly if resized */
+    .mobile-menu-sidebar {
+        display: none;
+    }
+}
+
+/* Text color animation */
+@keyframes text-scrolled {
+    from {
+        color: white;
+    }
+
+    to {
+        color: #1a1a1a;
+    }
+}
+
+.logo-text,
+.nav-link,
+.hamburger-btn {
+    color: white;
+    /* Default state */
+    animation: text-scrolled linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 50px;
+}

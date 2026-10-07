@@ -1,0 +1,262 @@
+.container1 {
+  display: flex;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../assets/dinner.jpg');
+  background-size: 80% 100%;
+  animation: gradientShift 15s ease infinite;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(5, 5, 4, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.regist-container {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  width: 100%;
+  max-width: 450px;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(212, 175, 55, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  animation: fadeInUp 0.6s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.regist-container::before {
+  content: '🍽️';
+  font-size: 2.5rem;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.head-login {
+  color: #d4af37;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+  font-family: 'Georgia', serif;
+}
+
+.input1 {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 12px;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.input1::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+}
+
+.input1:focus {
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.08);
+  box-shadow:
+    0 0 0 4px rgba(212, 175, 55, 0.1),
+    0 5px 15px rgba(212, 175, 55, 0.2);
+  transform: translateY(-2px);
+}
+
+.button {
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  border: none;
+  border-radius: 12px;
+  color: #1a1a1a;
+  font-size: 17px;
+  font-weight: 700;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+.para1 {
+  color: #ff6b6b;
+  font-size: 14px;
+  background: rgba(255, 107, 107, 0.1);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  backdrop-filter: blur(5px);
+  animation: shake 0.3s ease;
+}
+
+.signUp-link {
+  margin-left: 5px;
+  text-decoration: none;
+  color: #d4af37;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.signUp-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #d4af37, #f4d03f);
+  transition: width 0.3s ease;
+}
+
+.signUp-link:hover::after {
+  width: 100%;
+}
+
+.signUp-link:hover {
+  color: #f4d03f;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.para-signup {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .container1 {
+    padding: 15px;
+  }
+
+  .regist-container {
+    padding: 1.5rem 1.2rem;
+    max-width: 100%;
+  }
+
+  .head-login {
+    font-size: 1.5rem;
+  }
+
+  .input1 {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+
+  .button {
+    padding: 13px;
+    font-size: 15px;
+  }
+}
