@@ -112,6 +112,15 @@ JWT_SECRET=<random 64+ char string>
 MONGODB_URI=mongodb+srv://<user>:<pass>@<cluster>/<db>?retryWrites=true&w=majority
 ```
 
+`CLIENT_URL` accepts several origins, so a local frontend and a deployed one
+can both call the API:
+
+```env
+CLIENT_URL=https://client-tawny-alpha-70.vercel.app,http://localhost:5173
+# or, to allow every Vercel preview deployment:
+CLIENT_URL=https://*.vercel.app,http://localhost:5173
+```
+
 **3. Run both apps** (in two separate terminals)
 
 ```bash
@@ -144,7 +153,7 @@ cd server && npm start
 | -------------- | -------- | --------------------- | ----------------------------------------------- |
 | `PORT`         | no       | `5000`                | API listen port                                 |
 | `NODE_ENV`     | no       | `development`         | `development` also returns stack traces on error |
-| `CLIENT_URL`   | no       | `http://localhost:5173` | Allowed CORS origin                           |
+| `CLIENT_URL`   | no       | `http://localhost:5173` | Comma-separated list of allowed CORS origins (wildcards like `https://*.vercel.app` are supported) |
 | `JWT_SECRET`   | **yes**  | —                     | Secret used to sign access tokens (min 64 chars) |
 | `MONGODB_URI`  | **yes**  | —                     | MongoDB connection string                       |
 
@@ -251,6 +260,37 @@ curl -X POST http://localhost:5000/api/book \
 | --------------- | ------------------- | ------------------------------ |
 | `npm run dev`   | `nodemon index.js`  | auto-restart on file changes   |
 | `npm start`     | `node index.js`     | production start               |
+
+---
+
+## Deploying (Vercel + Render)
+
+**Frontend — Vercel**
+
+| Setting        | Value                                             |
+| -------------- | ------------------------------------------------- |
+| Root directory | `client`                                          |
+| Build command  | `npm run build`                                   |
+| Output         | `dist`                                            |
+| Env variable   | `VITE_API_URL=https://restaurentdinningapp.onrender.com` |
+
+**Backend — Render**
+
+| Setting       | Value                                             |
+| ------------- | ------------------------------------------------- |
+| Start command | `npm start` (run in `server/`)                    |
+| Env variables | `MONGODB_URI`, `JWT_SECRET`, `NODE_ENV=production`, `CLIENT_URL` |
+
+`CLIENT_URL` must list **every** origin that calls the API, otherwise the
+browser reports:
+
+```
+Access to fetch at 'https://...onrender.com/api/login' from origin
+'https://...vercel.app' has been blocked by CORS policy
+```
+
+Fix: set `CLIENT_URL=https://client-tawny-alpha-70.vercel.app` (add
+`,http://localhost:5173` for local work) and redeploy the service.
 
 ---
 
