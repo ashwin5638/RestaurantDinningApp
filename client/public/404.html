@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
+    <meta
+      name="description"
+      content="The page you requested does not exist. Return to the Savory home page or browse our seasonal menu."
+    />
+    <title>Page Not Found (404) | Savory</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0f0d0b;
+        color: #fff;
+        font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+        padding: 32px 20px;
+      }
+      .card {
+        max-width: 560px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 20px;
+        padding: 44px 36px;
+      }
+      .code {
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 4.5rem;
+        font-weight: 700;
+        color: #d4af37;
+      }
+      h1 {
+        margin: 12px 0 0;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-weight: 600;
+        font-size: 1.9rem;
+      }
+      p {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+        margin: 16px 0 28px;
+      }
+      nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 999px;
+        transition: border-color 0.2s ease, color 0.2s ease;
+      }
+      nav a:hover { border-color: #d4af37; color: #f4d03f; }
+      nav a.primary {
+        background: linear-gradient(135deg, #d4af37, #f4d03f);
+        color: #1a1200;
+        border-color: transparent;
+        font-weight: 600;
+      }
+      nav a:focus-visible { outline: 2px solid #d4af37; outline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <p class="code">404</p>
+      <h1>This page is off the menu</h1>
+      <p>
+        The page you requested does not exist or has been moved. Pick one of
+        the links below to keep browsing Savory.
+      </p>
+      <nav aria-label="Popular pages">
+        <a class="primary" href="/">Home</a>
+        <a href="/menucard">Menu</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/book">Book a Table</a>
+      </nav>
+    </main>
+  </body>
+</html>
